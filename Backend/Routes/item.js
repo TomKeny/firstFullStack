@@ -13,4 +13,6 @@ router.put("/items", itemControllers.updateTodo)
 
 router.delete("/items", itemControllers.deleteTodo)
 
+router.get('/item/:id', itemControllers.getTodo)
+
 module.exports = router

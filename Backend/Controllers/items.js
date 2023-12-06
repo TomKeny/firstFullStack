@@ -30,9 +30,17 @@ async function deleteTodo(req,res) {
     res.status(200).json(condition)
 }
 
+async function getTodo(req,res) {
+    const { id } = req.params
+
+    const todo = await Todo.findById(id)
+    res.status(200).json(todo)
+}
+
 module.exports = {
     createTodo,
     getTodos,
     updateTodo,
-    deleteTodo
+    deleteTodo,
+    getTodo
 }
